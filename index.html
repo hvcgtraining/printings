@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/eb7f790555.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Text Options -->
+    <div class="field-text-option">
+        <div class="field-group">
+            <label>Font Family:</label>
+
+            <select id="font-family-text">
+                <option value="Arial">Arial</option>
+                <option value="Roboto">Roboto</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New" selected>Courier New</option>
+            </select>
+
+        </div>
+        <div class="field-group">
+            <label>Font Size:</label>
+            <select id="font-size-text">
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="14">14</option>
+                <option value="16" selected>16</option>
+                <option value="18">18</option>
+                <option value="21">21</option>
+                <option value="24">24</option>
+                <option value="28">28</option>
+                <option value="32">32</option>
+                <option value="36">36</option>
+                <option value="42">42</option>
+                <option value="48">48</option>
+                <option value="56">56</option>
+                <option value="64">64</option>
+            </select>
+        </div>
+        <div class="row align-items-center">
+            <div class="field-group w-50">
+                <label>Color:</label>
+                <input type="color" name="" id="text-color" value="#ffffff">
+            </div>
+            <div class="field-group text-center w-50">
+                <span class="text-dec" data-dec="bold"> <i class="fas fa-bold"></i></span></span>
+                <span class="text-dec" data-dec="italic"><i class="fas fa-italic"></i></span>
+                <span class="text-dec" data-dec="underline"><i class="fas fa-underline"></i></span>
+                <span class="text-dec" data-dec="line-through"><i class="fa fa-strikethrough"></i></span>
+            </div>
+        </div>
+    </div>
+    <div id="wrapper" class="container-fluid">
+        <nav class="header">
+            <button class="save-img btn btn-primary" id="save">Save image</button>
+        </nav>
+        <div class="side-menu">
+            <ul class="menu">
+                <li>
+                    <a href="#" class="label-option">Text</a>
+                    <div class="options text-options">
+                        <div class="close-button">X</div>
+                        <div class="field">
+                            <button class="add-text">Add new text</button>
+                        </div>
+                        <div class="field">
+                            <textarea class="input-text" cols="30" rows="1"></textarea>
+                        </div>
+
+
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="label-option">Background</a>
+                    <div class="options d-none">
+                        <div class="close-button">X</div>
+                        <div class="field">
+                            <label for="upload-bg" class="add-text">Upload</label>
+                            <input type="file" id="upload-bg" accept="image/*">
+                        </div>
+                        <div class="row bg-list">
+                            <div class="bg-item">
+                                <img src="images/background/bg-1.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-2.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-3.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-4.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-5.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-6.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-7.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-8.jpg" alt="">
+                            </div>
+                            <div class="bg-item">
+                                <img src="images/background/bg-9.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="label-option">Image</a>
+                    <div class="options d-none">
+                        <div class="close-button">X</div>
+                        <div class="field">
+                            <label for="upload-img" class="add-text">Upload</label>
+                            <input type="file" id="upload-img" accept="image/*">
+                        </div>
+                        <div class="row image-list">
+                            <div class="image-item">
+                                <img src="images/image/img-1.jpg" alt="">
+                            </div>
+                            <div class="image-item">
+                                <img src="images/image/img-2.jpg" alt="">
+                            </div>
+                            <div class="image-item">
+                                <img src="images/image/img-3.webp" alt="">
+                            </div>
+                            <div class="image-item">
+                                <img src="images/image/img-4.webp" alt="">
+                            </div>
+                            <div class="image-item">
+                                <img src="images/image/img-5.jpg" alt="">
+                            </div>
+                            <div class="image-item">
+                                <img src="images/image/img-6.webp" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div id="canvas-container">
+
+        </div>
+        <div id="context-menu">
+            <div>
+                <button id="delete-button">Delete</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/konva@4.0.0/konva.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
+</body>
+
+</html>
