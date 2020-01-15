@@ -20,8 +20,6 @@ bgImg.onload = function () {
         x: 0,
         y: 0,
         image: bgImg,
-        width: canvasWidth,
-        height: canvasHeight,
         name: 'bg-image',
 
     });
