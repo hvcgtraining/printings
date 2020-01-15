@@ -17,17 +17,24 @@ body, input, button, textarea{
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #263147;
   }
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: #ccc;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #ccc;
+  }
+  /* Active */ 
+  .options.active {
+      display: block;
+  }
+  .menu-control.active {
+      background: #263147;
   }
 .d-none {
     display: none;
@@ -35,19 +42,20 @@ body, input, button, textarea{
 .row {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -3px;
 }
 img {
     width: 100%;
     height: 100%;
 }
 .bg-list, .image-list {
-    max-height: 170px;
     overflow: auto;
+    max-height: calc(100vh - 101px);
 }
 .bg-item, .image-item  {
-    width: 33.3333%;
-    min-height: 83px;
-    max-height: 85px;
+    width: 50%;
+    padding: 0 3px;
+    margin-bottom: 6px;
 }
 
 .field input[type="file"] {
@@ -100,46 +108,78 @@ img {
     z-index: 99999;
     display: none;
 }
-
+.bg-bottom{
+    border-bottom: 1px solid #8c94a3;
+    margin-top: 6px;
+}
 
 #wrapper{
-    background-color: #222222;
+    /* background-color: #222222; */
+    /* background-color: #263147; */
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
 .header{
-    background-color: #444;
-    padding: 1em;
+    /* background-color: #444; */
+    background: linear-gradient(to right, #334059 0%, #334059 8%, #3c4f75 62%, #2d55a3 100%);
+    padding: 0 1em;
+    height: 45px;
     display: flex;
     justify-content: flex-end;
-    box-shadow: 0 2px 1px rgba(0, 0, 0,.4);
 }
 .side-menu{
-    background-color: #333333;
-    box-shadow: 1px -1px 1px rgba(0, 0, 0,.4);
-    width: 280px;
-    height: calc(100vh - 78px);
+    /* background-color: #333333; */
+    background-color: #263147;
+    width: 430px;
+    height: 100%;
     position: fixed;
     overflow: auto;
+    display: flex;
 }
+
+.side-menu .menu{
+    width: 90px;
+    flex-shrink: 0;
+    background-color: #334059;
+}
+.side-menu .menu li{
+    padding: 7px 7px 0;
+    text-align: center;
+    font-size: 12px;
+    position: relative;
+}
+.side-menu .menu-content{
+    width: 340px;
+}
+
+li .menuIconsSvg___3_Zda{
+    fill: #8c94a3;
+    transition: .3s;
+    margin: 8px 0;
+}
+
 #canvas-container{
-    margin-left: 280px;
-    border: 20px solid #555;
+    margin-left: 430px;
+    border: 50px solid transparent;
 }
 .btn{
-    border: 0;
-    border-radius: 5rem;
-    background-color: orange;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    padding: 0.5em;
+    border: 1px solid white;
+    background-color: transparent;
+    font-size: 14px;
+    text-transform: capitalize;
+    height: 33px;
+    padding: 0 15px;
+    margin-top: 6px;
+    outline: none;
     color: #ebebeb;
+    border-radius: 6px;
     transition: .3s;
     cursor: pointer;
 }
 .btn:hover{
-    color: #ffffff;
+    color: #64b7db;
+    background-color: #fff;
 }
 
 
@@ -151,20 +191,22 @@ ul{
 }
 .menu a{
     display: block;
-    padding: 0.5em;
-    color: #ffffff;
+    /* padding: 0.5em; */
+    color: #8c94a3;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 2em;
+    font-size: 1em;
     transition: .3s;
     cursor: pointer;
 }
-.menu a:hover{
-    background-color: rgba(255,255,255,.03);
+li:hover a{
+    color: white;
+}
+li:hover .menuIconsSvg___3_Zda{
+    fill: #fff;
 }
 
 .options{
-    background-color: #666;
     padding: 1em;
     position: relative;
 }
@@ -179,19 +221,16 @@ ul{
     right: 0;
     font-size: 1.2rem;
 }
-
+.d-flex{
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
 .add-text{
-    border-radius: 0;
-    padding: 0.5rem 1rem;
-    text-transform: uppercase;
-    background-color: orange;
-    border: 0;
-    cursor: pointer;
-    transition: .3s;
     margin-bottom: 1rem;
-    font-weight: bold;
-    color: #FFF;
-    font-size: 14px;
+    margin-top: 0 !important;
+    text-align: center;
+    width: 50%;
 }
 
 .field .input-text{
@@ -213,7 +252,6 @@ ul{
     position: absolute;
     width: auto;
     background-color: #ccc;
-    box-shadow: 1px 1px 2px rgba(0,0,0,.4);
     border-radius: 0.25rem;
     padding: .5em 0;
 }

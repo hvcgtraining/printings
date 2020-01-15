@@ -1,17 +1,35 @@
 var init = function () {
-    var closeBtns = document.querySelectorAll(".options .close-button");
-    for (var i = 0; i < closeBtns.length; i++) {
-        closeBtns[i].onclick = function () {
-            this.parentElement.style.display = 'none';
-        }
-    }
+    // var closeBtns = document.querySelectorAll(".options .close-button");
+    // for (var i = 0; i < closeBtns.length; i++) {
+    //     closeBtns[i].onclick = function () {
+    //         this.parentElement.style.display = 'none';
+    //     }
+    // }
 
-    var toggleOption = document.querySelectorAll('.label-option');
-    toggleOption.forEach(function (toggle) {
-        toggle.addEventListener('click', function (e) {
-            this.nextElementSibling.style.display = 'block';
+    
+    var tabButtons = document.querySelectorAll('.menu-control');
+    var tabContents = document.querySelectorAll('.options');
+    tabButtons.forEach(function(item){
+        item.addEventListener('click', function(){
+            removeActiveTabButton();
+            closeAllTabContents();
+            this.classList.toggle('active');
+            var thisTabContent = document.querySelector("#"+ this.id + "-content");
+            console.log(thisTabContent);
+            thisTabContent.classList.add("active");
         })
     })
+
+    function removeActiveTabButton() {
+        tabButtons.forEach(function(item){
+            item.classList.remove('active');
+        })
+    }
+    function closeAllTabContents() {
+        tabContents.forEach(function(item){
+            item.classList.remove('active');
+        })
+    }
 
 }
 

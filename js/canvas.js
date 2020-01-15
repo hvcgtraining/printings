@@ -1,6 +1,6 @@
-var canvasPadding = 20 * 2;
-var canvasWidth = window.innerWidth - 280 - canvasPadding;
-var canvasHeight = window.innerHeight - 78 - canvasPadding;
+var canvasPadding = 50 * 2;
+var canvasWidth = window.innerWidth - 430 - canvasPadding;
+var canvasHeight = window.innerHeight - 45 - canvasPadding;
 
 var currentShape = this;
 
