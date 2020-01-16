@@ -4,17 +4,17 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #eee;
+    background-color: #d0cfcf;
 }
 body, input, button, textarea{
     font-size: 1rem;
-    /* font-family: monospace; */
+    font-family: monospace;
     /* font-family: 'Quicksand', sans-serif; */
     /* font-family: 'Roboto', sans-serif;
     font-family: 'Barlow', sans-serif;
     font-family: 'Alata', sans-serif;
     font-family: 'Pacifico', cursive; */
-    font-family: 'Dosis', sans-serif;
+    /* font-family: 'Dosis', sans-serif; */
 
 }
 /* width */
@@ -175,7 +175,7 @@ li .menuIconsSvg___3_Zda{
     height: calc(100vh - 45px);
 }
 #canvas-container{
-    border: 5px solid #fff;
+    border: 6px solid #eee;
     background: #fff;
 }
 .btn{
