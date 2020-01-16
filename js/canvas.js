@@ -166,7 +166,9 @@ document.querySelector(".add-text").addEventListener("click", function () {
     layer.draw();
 
     currentTarget = newText.attrs.name;
-
+    console.log(text);
+    text = '';
+    document.getElementById("textarea-custom").value = '';
 }, false)
 
 
