@@ -4,7 +4,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #eee;
 }
 body, input, button, textarea{
     font-size: 1rem;
@@ -159,9 +159,17 @@ li .menuIconsSvg___3_Zda{
     margin: 8px 0;
 }
 
-#canvas-container{
+.container-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     margin-left: 430px;
-    border: 50px solid transparent;
+    height: calc(100vh - 45px);
+}
+#canvas-container{
+    border: 5px solid #fff;
+    background: #fff;
 }
 .btn{
     border: 1px solid white;

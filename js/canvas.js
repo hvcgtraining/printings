@@ -21,6 +21,8 @@ bgImg.onload = function () {
         y: 0,
         image: bgImg,
         name: 'bg-image',
+        width: stage.width(),
+        height: stage.height()
 
     });
 
@@ -43,8 +45,6 @@ imgItem.forEach(item => {
                 x: 0,
                 y: 0,
                 image: canvasImg,
-                width: canvasWidth / 3,
-                height: canvasWidth / 3,
                 draggable: true,
                 name: 'canvas-image'
             })
@@ -85,8 +85,6 @@ function uploadImage(input) {
                     x: 0,
                     y: 0,
                     image: canvasImg,
-                    width: canvasWidth / 3,
-                    height: canvasWidth / 3,
                     draggable: true,
                     name: 'canvas-image'
                 })
@@ -128,8 +126,8 @@ function writeMessage(message) {
 
 var stage = new Konva.Stage({
     container: 'canvas-container',
-    width: canvasWidth,
-    height: canvasHeight
+    width: 550,
+    height: 550
 });
 
 var layer = new Konva.Layer({
