@@ -6,27 +6,26 @@ var init = function () {
     //     }
     // }
 
-    
+
     var tabButtons = document.querySelectorAll('.menu-control');
     var tabContents = document.querySelectorAll('.options');
-    tabButtons.forEach(function(item){
-        item.addEventListener('click', function(){
+    tabButtons.forEach(function (item) {
+        item.addEventListener('click', function () {
             removeActiveTabButton();
             closeAllTabContents();
             this.classList.toggle('active');
-            var thisTabContent = document.querySelector("#"+ this.id + "-content");
-            console.log(thisTabContent);
+            var thisTabContent = document.querySelector("#" + this.id + "-content");
             thisTabContent.classList.add("active");
         })
     })
 
     function removeActiveTabButton() {
-        tabButtons.forEach(function(item){
+        tabButtons.forEach(function (item) {
             item.classList.remove('active');
         })
     }
     function closeAllTabContents() {
-        tabContents.forEach(function(item){
+        tabContents.forEach(function (item) {
             item.classList.remove('active');
         })
     }

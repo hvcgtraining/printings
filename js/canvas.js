@@ -49,7 +49,6 @@ imgItem.forEach(item => {
                 name: 'canvas-image'
             })
             layer.add(imgSrc);
-
             stage.add(layer);
             layer.batchDraw();
         }
@@ -360,8 +359,106 @@ function downloadURI(uri, name) {
 document.getElementById('save').addEventListener(
     'click',
     function () {
-        var dataURL = stage.toDataURL();
-        downloadURI(dataURL, 'stage.png');
+        console.log(stage.toJSON())
+        // var dataURL = stage.toDataURL();
+        // downloadURI(dataURL, 'stage.png');
     },
     false
 );
+
+// Template
+const templates = [
+    {
+        textData: [
+            {
+                text: "This is a test template",
+                fontSize: 48,
+                fontFamily: 'Pacifico',
+                color: '#ff0000',
+                x: 100.15104131410479,
+                y: 351.0471220932542,
+                rotation: -29.93118584621161,
+            }
+        ],
+        imgsData: [
+            {
+                x: 340,
+                y: 249,
+                scaleX: 0.74,
+                scaleY: 0.74,
+                src: 'images/sticker/4.png'
+
+            },
+            {
+                x: 2,
+                y: 0,
+                scaleX: 0.5,
+                scaleY: 0.5,
+                src: 'images/sticker/8.png'
+
+            }
+        ],
+        bgUrl: 'images/background/bg-8.jpg'
+    }
+]
+function createText(options) {
+    console.log(options.textData[0].text);
+    for (var i = 0; i < options.textData.length; i++) {
+        var newText = new Konva.Text({
+            x: options.textData[i].x,
+            y: options.textData[i].y,
+            text: options.textData[i].text,
+            fontSize: options.textData[i].fontSize,
+            fontFamily: options.textData[i].fontFamily,
+            fill: options.textData[i].color,
+            name: 'text',
+            draggable: true,
+            rotation: options.textData[i].rotation
+        });
+
+        layer.add(newText);
+    }
+
+
+    //remove all transformer before create new
+    stage.find('Transformer').destroy();
+
+    // create new transformer
+    var tr = new Konva.Transformer();
+    layer.add(tr);
+    tr.attachTo(newText);
+    layer.draw();
+
+    currentTarget = newText.attrs.name;
+}
+function createBg(options) {
+    stage.find('.bg-image').destroy();
+    bgImg.src = options.bgUrl;
+}
+function createImage(options) {
+
+    for (let j = 0; j < options.imgsData.length; j++) {
+
+        var newImage = new Image();
+        newImage.onload = function () {
+            let newImgSrc = new Konva.Image({
+                x: options.imgsData[j].x,
+                y: options.imgsData[j].y,
+                image: newImage,
+                draggable: true,
+                name: 'canvas-image',
+                scaleX: options.imgsData[j].scaleX,
+                scaleY: options.imgsData[j].scaleY
+            })
+            layer.add(newImgSrc);
+            layer.batchDraw();
+        }
+        newImage.src = options.imgsData[j].src;
+    }
+}
+
+document.querySelector('.template-item').addEventListener('click', function (e) {
+    createBg(templates[0]);
+    createText(templates[0]);
+    createImage(templates[0])
+}, false)

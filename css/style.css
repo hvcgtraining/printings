@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 body {
     margin: 0;
@@ -59,7 +61,7 @@ img {
     overflow: auto;
     max-height: calc(100vh - 101px);
 }
-.bg-item, .image-item  {
+.bg-item, .image-item , .template-item {
     width: 50%;
     padding: 0 3px;
     margin-bottom: 6px;
@@ -107,13 +109,61 @@ img {
     margin: 0 5px;
     cursor: pointer;
 }
+.field-text-title > h3 {
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 500;
+}
 .field-text-option {
+    border-top: 9px solid #334059;
     position: absolute;
-    width: 280px;
-    background: rgba(0, 0, 0,.4);
-    padding: 5px 10px;
+    width: 300px;
+    background: #222834;
+    padding: 5px 0;
     z-index: 99999;
     display: none;
+}
+.field-group {
+    border-top: 1px solid #334059;
+    padding: 13px 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.field-group > select {
+    background: #333b4a;
+    color: #fff;
+    padding: 6px 10px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+.field-group  label {
+    font-size: 14px;
+}
+input[type="color"] {
+    border: 0;
+    background: transparent;
+    outline: none;
+    min-height: 35px;
+    min-width: 60px;
+    cursor: pointer;
+}
+
+.text-dec {
+    background: #333b4a;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 0 3px !important;
+}
+
+.text-dec > i {
+    font-size: 14px;
 }
 .bg-bottom{
     border-bottom: 1px solid #8c94a3;
@@ -134,9 +184,14 @@ img {
     height: 45px;
     display: flex;
     justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
 .side-menu{
     /* background-color: #333333; */
+    margin-top: 45px;
     background-color: #263147;
     width: 430px;
     height: 100%;
@@ -151,10 +206,12 @@ img {
     background-color: #334059;
 }
 .side-menu .menu li{
-    padding: 7px 7px 0;
+    padding: 7px 0;
     text-align: center;
     font-size: 12px;
     position: relative;
+    cursor: pointer;
+
 }
 .side-menu .menu-content{
     width: 340px;
@@ -170,7 +227,7 @@ li .menuIconsSvg___3_Zda{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    margin-top: 45px;
     margin-left: 430px;
     height: calc(100vh - 45px);
 }
@@ -204,7 +261,7 @@ ul{
     margin: 0;
     padding: 0;
 }
-.menu a{
+.menu .label-option{
     display: block;
     /* padding: 0.5em; */
     color: #8c94a3;
