@@ -359,9 +359,8 @@ function downloadURI(uri, name) {
 document.getElementById('save').addEventListener(
     'click',
     function () {
-        console.log(stage.toJSON())
-        // var dataURL = stage.toDataURL();
-        // downloadURI(dataURL, 'stage.png');
+        var dataURL = stage.toDataURL();
+        downloadURI(dataURL, 'stage.png');
     },
     false
 );
@@ -437,27 +436,32 @@ function createBg(options) {
 }
 function createImage(options) {
 
-    for (let j = 0; j < options.imgsData.length; j++) {
-
+    const array = options.imgsData;
+    array.forEach(function (item) {
         var newImage = new Image();
         newImage.onload = function () {
             let newImgSrc = new Konva.Image({
-                x: options.imgsData[j].x,
-                y: options.imgsData[j].y,
+                x: item.x,
+                y: item.y,
                 image: newImage,
                 draggable: true,
                 name: 'canvas-image',
-                scaleX: options.imgsData[j].scaleX,
-                scaleY: options.imgsData[j].scaleY
+                scaleX: item.scaleX,
+                scaleY: item.scaleY
             })
             layer.add(newImgSrc);
             layer.batchDraw();
         }
-        newImage.src = options.imgsData[j].src;
-    }
+        newImage.src = item.src;
+    })
+
+
+
 }
 
 document.querySelector('.template-item').addEventListener('click', function (e) {
+    stage.find('#ext').destroy();
+    stage.find('#canvas-image').destroy();
     createBg(templates[0]);
     createText(templates[0]);
     createImage(templates[0])
