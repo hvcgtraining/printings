@@ -145,9 +145,9 @@ document.querySelector(".add-text").addEventListener("click", function () {
         x: 0,
         y: 0,
         text: text,
-        fontSize: 32,
-        fontFamily: 'Roboto',
-        fill: '#ff0000',
+        fontSize: 56,
+        fontFamily: 'Open Sans',
+        fill: 'blue',
         name: 'text',
         draggable: true
     });
