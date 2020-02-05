@@ -123,14 +123,25 @@ img {
     font-weight: 500;
 }
 .field-text-option {
-    border-top: 9px solid #334059;
+    border-top: 9px solid transparent;
     position: absolute;
     width: 300px;
-    background: #222834;
+    background: rgba(23,29,42,.9);
     padding: 5px 0;
     z-index: 99999;
     display: none;
 }
+.field-text-option::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9px;
+    background: linear-gradient(90deg,#334059,#334059 8%,#15728c);
+    margin-top: -9px;
+}
+
 .field-group {
     border-top: 1px solid #334059;
     padding: 13px 15px;
@@ -165,10 +176,15 @@ input[type="color"] {
     display: inline-block;
     padding: 5px 10px;
     margin: 0 3px !important;
+    transition: all ease .4s;
 }
 
 .text-dec > i {
     font-size: 14px;
+}
+
+.text-dec:hover {
+    background: #51a6ea;
 }
 .bg-bottom{
     border-bottom: 1px solid #8c94a3;
