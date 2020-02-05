@@ -147,7 +147,7 @@ document.querySelector(".add-text").addEventListener("click", function () {
         text: text,
         fontSize: 56,
         fontFamily: 'Open Sans',
-        fill: 'blue',
+        fill: '#004080',
         name: 'text',
         draggable: true
     });
@@ -242,27 +242,65 @@ stage.on('click', function (e) {
             }
 
             // Change text Decoration
+            let isBold, isItalic, isUnderline, isLineThrough = false;
             textDec.forEach(item => {
                 item.onclick = function (e) {
-                    console.log('clicked')
+
                     var data = item.getAttribute('data-dec');
                     switch (data) {
+
                         case 'bold':
-                            currentShape.fontStyle('bold');
-                            layer.draw();
-                            break;
+                            if (!isBold) {
+                                currentShape.fontStyle('bold');
+                                layer.draw();
+                                isBold = true;
+                                break;
+                            } else {
+                                currentShape.fontStyle('');
+                                layer.draw();
+                                isBold = false;
+                                break;
+                            }
+
                         case 'italic':
-                            currentShape.fontStyle('italic');
-                            layer.draw();
-                            break;
+                            if (!isItalic) {
+                                currentShape.fontStyle('italic');
+                                layer.draw();
+                                isItalic = true;
+                                break;
+                            } else {
+                                currentShape.fontStyle('');
+                                layer.draw();
+                                isItalic = false;
+                                break;
+                            }
+
                         case 'underline':
-                            currentShape.textDecoration('underline');
-                            layer.draw();
-                            break;
+                            if (!isUnderline) {
+                                currentShape.textDecoration('underline');
+                                layer.draw();
+                                isUnderline = true;
+                                break;
+                            } else {
+                                currentShape.textDecoration('');
+                                layer.draw();
+                                isUnderline = false;
+                                break;
+                            }
+
                         case 'line-through':
-                            currentShape.textDecoration('line-through');
-                            layer.draw();
-                            break;
+                            if (!isLineThrough) {
+                                currentShape.textDecoration('line-through');
+                                layer.draw();
+                                isLineThrough = true;
+                                break;
+                            } else {
+                                currentShape.textDecoration('');
+                                layer.draw();
+                                isLineThrough = false;
+                                break;
+                            }
+
                     }
                 }
             })
@@ -460,8 +498,8 @@ function createImage(options) {
 }
 
 document.querySelector('.template-item').addEventListener('click', function (e) {
-    stage.find('#ext').destroy();
-    stage.find('#canvas-image').destroy();
+    stage.find('Text').destroy();
+    stage.find('Image').destroy();
     createBg(templates[0]);
     createText(templates[0]);
     createImage(templates[0])

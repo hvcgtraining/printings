@@ -67,6 +67,11 @@ img {
     margin-bottom: 6px;
 }
 
+.textarea-edit {
+    padding: 5px;
+    outline: 0;
+}
+
 .field input[type="file"] {
     
         position: absolute;
