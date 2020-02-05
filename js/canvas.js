@@ -142,8 +142,8 @@ document.querySelector(".add-text").addEventListener("click", function () {
     }
 
     var newText = new Konva.Text({
-        x: 0,
-        y: 0,
+        x: 130,
+        y: 200,
         text: text,
         fontSize: 56,
         fontFamily: 'Open Sans',
