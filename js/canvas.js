@@ -125,8 +125,8 @@ function writeMessage(message) {
 
 var stage = new Konva.Stage({
     container: 'canvas-container',
-    width: 550,
-    height: 550
+    width: 544,
+    height: 704
 });
 
 var layer = new Konva.Layer({
@@ -218,7 +218,7 @@ stage.on('click', function (e) {
                 y: stageBox.top + textPosition.y
             };
             // Display text options
-            textOptions.style.top = areaPosition.y + 50 + 'px';
+            textOptions.style.top = areaPosition.y + 100 + 'px';
             textOptions.style.left = areaPosition.x + 'px';
             textOptions.style.display = 'block';
             // Change text color
@@ -314,7 +314,8 @@ stage.on('click', function (e) {
             textarea.style.position = 'absolute';
             textarea.style.top = areaPosition.y + 'px';
             textarea.style.left = areaPosition.x + 'px';
-            textarea.style.width = currentShape.width();
+            textarea.style.width = 300 +'px';
+            textarea.style.height = 100 +'px';
 
             textarea.focus();
 
@@ -342,6 +343,7 @@ stage.on('click', function (e) {
         tr.attachTo(e.target);
         layer.draw();
     }
+    
 
 
 });
@@ -397,45 +399,224 @@ function downloadURI(uri, name) {
 document.getElementById('save').addEventListener(
     'click',
     function () {
-        var dataURL = stage.toDataURL();
+        var dataURL = stage.toDataURL({ pixelRatio: 3 });
         downloadURI(dataURL, 'stage.png');
+        console.log(stage.toJSON());
     },
     false
 );
-
 // Template
 const templates = [
+  
     {
         textData: [
             {
-                text: "This is a test template",
-                fontSize: 48,
-                fontFamily: 'Pacifico',
-                color: '#ff0000',
-                x: 100.15104131410479,
-                y: 351.0471220932542,
-                rotation: -29.93118584621161,
+                text: "HOME FOR SALE",
+                fontSize: 42,
+                fontFamily: 'Josefin Sans',
+                color: '#ffffff',
+                x: 167,
+                y: 37,
+                
+            },
+            {
+                text: "PROTERTY",
+                fontSize: 16,
+                fontFamily: 'Josefin Sans',
+                color: '#000000',
+                x: 12,
+                y: 444,  
+            },
+            {
+                text: "FEATURES",
+                fontSize: 16,
+                fontFamily: 'Josefin Sans',
+                color: '#317ee1',
+                x: 98,
+                y: 444,
+                
+            },
+            {
+                text: "OVERVIEW",
+                fontSize: 16,
+                fontFamily: 'Josefin Sans',
+                color: '#000000',
+                x: 277,
+                y: 444,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec,\negestas non nisi. Proin eget tortor risus. Quisque velit nisi,\npretium ut lacinia in, elementum id enim.",
+                fontSize: 10,
+                fontFamily: 'Lato',
+                color: '#000000',
+                x: 30,
+                y: 472,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec,\negestas non nisi. Proin eget tortor risus. Quisque velit nisi,\npretium ut lacinia in, elementum id enim.",
+                fontSize: 10,
+                fontFamily: 'Lato',
+                color: '#000000',
+                x: 295,
+                y: 472,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec,\negestas non nisi. Proin eget tortor risus. Quisque velit nisi,\npretium ut lacinia in, elementum id enim.",
+                fontSize: 10,
+                fontFamily: 'Lato',
+                color: '#000000',
+                x: 30,
+                y: 514,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec,\negestas non nisi. Proin eget tortor risus. Quisque velit nisi,\npretium ut lacinia in, elementum id enim.",
+                fontSize: 10,
+                fontFamily: 'Lato',
+                color: '#000000',
+                x: 296,
+                y: 514,
+                
+            },
+            {
+                text: "CONTACT US: (098)4654-513",
+                fontSize: 32,
+                fontFamily: 'League Gothic',
+                color: '#ffffff',
+                x: 66,
+                y: 665,
+                
             }
         ],
         imgsData: [
+        ],
+        bgUrl: 'images/templates/design-2.png'
+    },
+    {
+        textData: [
             {
-                x: 340,
-                y: 249,
-                scaleX: 0.74,
-                scaleY: 0.74,
-                src: 'images/sticker/4.png'
-
+                text: "FOR\nSALE",
+                fontSize: 64,
+                fontFamily: 'Anton',
+                color: '#ffffff',
+                x: 329,
+                y: 215,
+                
             },
             {
-                x: 2,
-                y: 0,
-                scaleX: 0.5,
-                scaleY: 0.5,
-                src: 'images/sticker/8.png'
-
+                text: "ORDER AT",
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 339,
+                y: 359,  
+            },
+            {
+                text: "10,000,000",
+                fontSize: 30,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 339,
+                y: 382,
+                
+            },
+            {
+                text: "THIS HOME IS FUTURE...",
+                fontSize: 18,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 26,
+                y: 340,
+                
+            },
+            {
+                text: "2 Living rooms",
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 44,
+                y: 383,
+                
+            },
+            {
+                text: "1 Dining room",
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 42,
+                y: 405,
+                
+            },
+            {
+                text: "3 Bedrooms",
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 184,
+                y: 382,
+                
+            },
+            {
+                text: "Bathrooms",
+                fontSize: 14,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 185,
+                y: 405,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Proin eget tortor risus",
+                fontSize: 12,
+                fontFamily: 'Open Sans',
+                color: '#000000',
+                x: 64,
+                y: 590,
+                
+            },
+            {
+                text: "Praesent sapien massa, convallis a pellentesque nec, egestas non nisi",
+                fontSize: 12,
+                fontFamily: 'Open Sans',
+                color: '#000000',
+                x: 105,
+                y: 608,
+                
+            },
+            {
+                text: "CONTACT US: (984)654-513",
+                fontSize: 16,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 105,
+                y: 654,
+                
+            },
+            {
+                text: "realestate@gmail.com | www.realestate.com",
+                fontSize: 10,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 331,
+                y: 648,
+                
+            },
+            {
+                text: "2112 Isabella Ave, Burlington, IA, 52601",
+                fontSize: 10,
+                fontFamily: 'Open Sans',
+                color: '#ffffff',
+                x: 334,
+                y: 666,
+                
             }
         ],
-        bgUrl: 'images/background/bg-8.jpg'
+        imgsData: [
+        ],
+        bgUrl: 'images/templates/design-1.png'
     }
 ]
 function createText(options) {
@@ -463,7 +644,7 @@ function createText(options) {
     // create new transformer
     var tr = new Konva.Transformer();
     layer.add(tr);
-    tr.attachTo(newText);
+    // tr.attachTo(newText);
     layer.draw();
 
     currentTarget = newText.attrs.name;
@@ -497,10 +678,13 @@ function createImage(options) {
 
 }
 
-document.querySelector('.template-item').addEventListener('click', function (e) {
-    stage.find('Text').destroy();
-    stage.find('Image').destroy();
-    createBg(templates[0]);
-    createText(templates[0]);
-    createImage(templates[0])
-}, false)
+const templateItem = document.querySelectorAll('.template-item');
+templateItem.forEach((item, index) => {
+    item.addEventListener('click', function (e) {
+        stage.find('Text').destroy();
+        stage.find('Image').destroy();
+        createBg(templates[index]);
+        createText(templates[index]);
+        createImage(templates[index])
+    }, false)
+})
