@@ -218,7 +218,7 @@ stage.on('click', function (e) {
                 y: stageBox.top + textPosition.y
             };
             // Display text options
-            textOptions.style.top = areaPosition.y + 100 + 'px';
+            textOptions.style.top = areaPosition.y + 150 + 'px';
             textOptions.style.left = areaPosition.x + 'px';
             textOptions.style.display = 'block';
             // Change text color
@@ -313,9 +313,9 @@ stage.on('click', function (e) {
             textarea.value = currentShape.text();
             textarea.style.position = 'absolute';
             textarea.style.top = areaPosition.y + 'px';
-            textarea.style.left = areaPosition.x + 'px';
-            textarea.style.width = 300 +'px';
-            textarea.style.height = 100 +'px';
+            textarea.style.left = stageBox.left + 'px';
+            textarea.style.width = 544 +'px';
+            textarea.style.height = 150 +'px';
 
             textarea.focus();
 

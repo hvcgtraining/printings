@@ -362,3 +362,10 @@ li:hover .menuIconsSvg___3_Zda{
 #context-menu button:hover {
     background-color: #fff;
 }
+
+.textarea-edit {
+    background: rgba(23,29,42,.85);
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+}
