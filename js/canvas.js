@@ -219,7 +219,7 @@ stage.on('click', function (e) {
             };
             // Display text options
             textOptions.style.top = areaPosition.y + 150 + 'px';
-            textOptions.style.left = areaPosition.x + 'px';
+            textOptions.style.left = stageBox.left + 6 + 'px';
             textOptions.style.display = 'block';
             // Change text color
             textColor.value = currentShape.fill();
@@ -313,7 +313,7 @@ stage.on('click', function (e) {
             textarea.value = currentShape.text();
             textarea.style.position = 'absolute';
             textarea.style.top = areaPosition.y + 'px';
-            textarea.style.left = stageBox.left + 'px';
+            textarea.style.left = stageBox.left + 6 + 'px';
             textarea.style.width = 544 +'px';
             textarea.style.height = 150 +'px';
 

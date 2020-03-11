@@ -52,6 +52,7 @@ body, input, button, textarea{
     display: flex;
     flex-wrap: wrap;
     margin: 0 -3px;
+    justify-content: center;
 }
 img {
     width: 100%;
@@ -125,8 +126,8 @@ img {
 .field-text-option {
     border-top: 9px solid transparent;
     position: absolute;
-    width: 300px;
-    background: rgba(23,29,42,.85);
+    width: 544px;
+    background: rgba(23,29,42,.9);
     padding: 5px 0;
     z-index: 99999;
     display: none;
