@@ -218,7 +218,7 @@ stage.on('click', function (e) {
                 y: stageBox.top + textPosition.y
             };
             // Display text options
-            textOptions.style.top = areaPosition.y + 150 + 'px';
+            textOptions.style.top = areaPosition.y + 75 + 'px';
             textOptions.style.left = stageBox.left + 6 + 'px';
             textOptions.style.display = 'block';
             // Change text color
@@ -315,18 +315,14 @@ stage.on('click', function (e) {
             textarea.style.top = areaPosition.y + 'px';
             textarea.style.left = stageBox.left + 6 + 'px';
             textarea.style.width = 544 +'px';
-            textarea.style.height = 150 +'px';
+            textarea.style.height = 75 +'px';
 
             textarea.focus();
 
-            textarea.addEventListener('keydown', function (e) {
-                console.log(e.keyCode);
+            textarea.addEventListener('input', function (e) {
+                currentShape.text(textarea.value);
+                layer.draw();
                 // hide on enter
-                if (e.keyCode === 13) {
-                    currentShape.text(textarea.value);
-                    closeTextAreas();
-                    layer.draw();
-                }
             });
         });
     }
