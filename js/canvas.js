@@ -384,7 +384,7 @@ stage.on("click", function(e) {
         closeTextAreas();
         window.removeEventListener("click", handleOutsideClick);
         currentText.show();
-        // tr.show();
+        tr.show();
         // tr.forceUpdate();
         layer.draw();
       }
@@ -414,10 +414,10 @@ stage.on("click", function(e) {
       textarea.addEventListener("keydown", function(e) {
         // hide on enter
         // but don't hide on shift + enter
-        if (e.keyCode === 13 && !e.shiftKey) {
-          currentText.text(textarea.value);
-          removeTextarea();
-        }
+        // if (e.keyCode === 13 && !e.shiftKey) {
+        //   currentText.text(textarea.value);
+        //   removeTextarea();
+        // }
         // on esc do not set value back to node
         if (e.keyCode === 27) {
           removeTextarea();
