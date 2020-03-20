@@ -339,9 +339,9 @@ stage.on("click", function(e) {
       textarea.style.width =
         currentText.width() - currentText.padding() * 2 + 10 +  "px";
       textarea.style.height =
-        currentText.height() - currentText.padding() * 2 + 5 + "px";
+        currentText.height() - currentText.padding() * 2 + "px";
         // Display text options
-      textOptions.style.top = areaPosition.y + textarea.clientHeight + 75 + "px";
+      textOptions.style.top = areaPosition.y + textarea.clientHeight + 25 + "px";
       textOptions.style.left = stageBox.left + 6 + "px";
       textOptions.style.display = "block";
 
