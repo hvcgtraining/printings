@@ -189,6 +189,7 @@ document.querySelector(".add-text").addEventListener(
 );
 
 stage.on("click", function(e) {
+
   // if click on empty area - remove all transformers
   if (e.target === stage) {
     stage.find("Transformer").destroy();
@@ -204,13 +205,13 @@ stage.on("click", function(e) {
     layer.draw();
   }
 
-  currentShape = e.target;
+
   
   if (e.target.hasName("text")) {
     var currentText = e.target;
     textOptions.style.display = "none";
 
-    currentText.addEventListener("dblclick", function() {
+    currentText.addEventListener("dblclick", function(e) {
       currentText.hide();
       tr.hide();
       layer.draw();
@@ -433,11 +434,11 @@ stage.on("click", function(e) {
       });
 
       function handleOutsideClick(e) {
-          
-        if (e.target !== textarea) {
+        if (e.target.type != 'textarea') {
           currentText.text(textarea.value);
           removeTextarea();
         }
+        
       }
       setTimeout(() => {
         window.addEventListener("click", handleOutsideClick);
@@ -487,9 +488,11 @@ document.getElementById("delete-button").addEventListener("click", function() {
   layer.draw();
 });
 
-window.addEventListener("click", function() {
+window.addEventListener("click", function(e) {
+  e.stopPropagation();
   // hide menu
   menuNode.style.display = "none";
+  
 });
 
 stage.on("contextmenu", function(e) {
